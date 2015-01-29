@@ -122,7 +122,7 @@ class WsSecurityFilter extends WsSecurityFilterClientServer implements SoapReque
 
         // init timestamp
         $dt = new \DateTime('now', new \DateTimeZone('UTC'));
-        $createdTimestamp = $dt->format(self::DATETIME_FORMAT);
+        $createdTimestamp=$dt->format("Y-m-d\TH:i:s").'Z';
 
         // create security header
         $security = $filterHelper->createElement(Helper::NS_WSS, 'Security');
